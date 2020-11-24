@@ -2,20 +2,20 @@ from typing import List
 from pydantic import BaseModel, Field
 
 
-# класс товар
+# item model
 class Item(BaseModel):
-    title: str = (...)
-    description: str = (...)
+    title: str
+    description: str
     parameters: List[dict] = []
 
     class Config:
         schema_extra = {
             "example": {
                 "title": "Nokia 3310",
-                "description": "cellphone nokia",
+                "description": "cellphone Nokia",
                 "parameters": [
                     {"model": "3310"},
-                    {"batary": "800 mAh"}
+                    {"batery": "800"}
                 ]
             }
         }
@@ -27,7 +27,3 @@ def response_item(data, message):
         'code': 200,
         'message': message,
     }
-
-
-def error_response_item(error, code, message):
-    return {'error': error, 'code': code, 'message': message}
