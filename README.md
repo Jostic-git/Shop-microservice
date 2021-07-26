@@ -27,7 +27,7 @@ git clone https://github.com/Jostic-git/shop.git
 
 Установите зависимости командой 
 ```bash
-pip install -t requirements.txt
+pip install -r requirements.txt
 ```
 Для работы проекта требуется локально установленная MongoDB (https://docs.mongodb.com/manual/installation/)
 
